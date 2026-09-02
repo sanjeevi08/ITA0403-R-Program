@@ -1,0 +1,7 @@
+x <- rnorm(100, mean=50, sd=10)
+
+print(x)
+
+count <- sum(x > 50)
+
+cat("Numbers greater than 50 =", count, "\n")
