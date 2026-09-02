@@ -1,1 +1,14 @@
+v <- c(10, 20, 30)
+m <- matrix(1:4, nrow=2)
 
+add <- function(a, b) {
+  a + b
+}
+
+mylist <- list(
+  vector=v,
+  matrix=m,
+  function=add
+)
+
+print(mylist)
