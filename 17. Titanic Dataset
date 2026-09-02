@@ -1,0 +1,19 @@
+data(Titanic)
+
+# Survival vs Class
+barplot(
+  apply(Titanic, c(2,4), sum),
+  beside=TRUE,
+  main="Survival vs Class",
+  xlab="Class",
+  ylab="Count"
+)
+
+# Gender comparison
+barplot(
+  apply(Titanic, c(2,1), sum),
+  beside=TRUE,
+  main="Class vs Gender",
+  xlab="Class",
+  ylab="Count"
+)
