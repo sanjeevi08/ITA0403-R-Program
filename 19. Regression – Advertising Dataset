@@ -1,0 +1,15 @@
+advertising <- data.frame(
+  Spend=c(10,20,30,40,50),
+  Sales=c(25,35,45,55,65)
+)
+
+model <- lm(Sales ~ Spend,
+            data=advertising)
+
+print(summary(model))
+
+newdata <- data.frame(Spend=35)
+
+prediction <- predict(model, newdata)
+
+cat("Predicted Sales =", prediction, "\n")
