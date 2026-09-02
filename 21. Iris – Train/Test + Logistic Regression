@@ -1,0 +1,36 @@
+data(iris)
+
+set.seed(123)
+
+n <- nrow(iris)
+
+train_index <- sample(
+  1:n,
+  size=0.8*n
+)
+
+train <- iris[train_index,]
+test <- iris[-train_index,]
+
+model <- glm(
+  Species ~ Petal.Length + Petal.Width,
+  data=train,
+  family=binomial
+)
+
+prediction <- predict(
+  model,
+  test,
+  type="response"
+)
+
+predicted_class <- ifelse(
+  prediction > 0.5,
+  "versicolor",
+  "setosa"
+)
+
+print(table(
+  Actual=test$Species,
+  Predicted=predicted_class
+))
