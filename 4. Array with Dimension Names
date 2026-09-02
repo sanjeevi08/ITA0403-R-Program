@@ -1,0 +1,14 @@
+x <- 1:12
+
+arr <- array(x,
+             dim=c(3, 2, 2),
+             dimnames=list(
+               c("R1","R2","R3"),
+               c("C1","C2"),
+               c("T1","T2")
+             ))
+
+print(arr)
+
+print(arr[1,2,1])
+print(arr[3,1,2])
