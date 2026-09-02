@@ -1,0 +1,7 @@
+data <- read.csv("exam_data.csv")
+
+print(data)
+If your CSV file is in another location:
+data <- read.csv(file.choose())
+
+print(data)
