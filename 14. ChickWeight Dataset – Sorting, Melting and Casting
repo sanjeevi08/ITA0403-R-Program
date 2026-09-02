@@ -1,0 +1,27 @@
+data(ChickWeight)
+
+# Display data
+print(head(ChickWeight))
+
+# Sort by weight
+sorted <- ChickWeight[order(ChickWeight$weight),]
+
+print(head(sorted))
+
+# Melting
+library(reshape2)
+
+melted <- melt(
+  ChickWeight,
+  id.vars=c("Chick","Time","Diet")
+)
+
+print(head(melted))
+
+# Cast by Diet
+result <- dcast(
+  melted,
+  Diet ~ Time,
+  value.var="value",
+  fun.aggregate=mean
+)
