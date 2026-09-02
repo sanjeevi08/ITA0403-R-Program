@@ -1,0 +1,11 @@
+num <- c(10, 20, 30, 40, 50)
+char <- c("A", "B", "C", "D")
+logic <- c(TRUE, FALSE, TRUE, FALSE)
+
+print(num)
+print(char)
+print(logic)
+
+print(typeof(num))
+print(typeof(char))
+print(typeof(logic))
