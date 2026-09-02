@@ -1,0 +1,24 @@
+library(reshape2)
+
+data(airquality)
+
+air <- melt(
+  airquality,
+  id.vars=c("Month","Day")
+)
+
+print(head(air))
+
+result <- dcast(
+  air,
+  Month ~ variable,
+  fun.aggregate=mean,
+  na.rm=TRUE
+)
+
+print(result)
+This gives monthly averages for:
+Ozone 
+Solar.R 
+Wind 
+Temp 
