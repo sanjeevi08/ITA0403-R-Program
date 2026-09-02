@@ -1,0 +1,12 @@
+height <- c(150, 160, 155, 170, 165)
+
+height_factor <- factor(height)
+
+print(height_factor)
+print(levels(height_factor))
+
+letters_sample <- sample(LETTERS, 5)
+
+letter_factor <- factor(letters_sample)
+
+print(letter_factor)
