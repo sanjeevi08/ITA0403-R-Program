@@ -1,0 +1,30 @@
+data(iris)
+
+# Dimensions
+print(dim(iris))
+
+# Summary
+print(summary(iris))
+
+# Standard deviation
+print(sd(iris$Sepal.Length))
+
+# Quantiles
+print(quantile(iris$Sepal.Length))
+
+# Group by Species
+print(aggregate(Sepal.Length ~ Species,
+                data=iris,
+                mean))
+
+# Pivot table
+print(table(iris$Species))
+
+# Categorical grouping
+iris$Sepal_Category <- cut(
+  iris$Sepal.Length,
+  breaks=c(0,5,6,10),
+  labels=c("Short","Medium","Long")
+)
+
+print(table(iris$Sepal_Category))
